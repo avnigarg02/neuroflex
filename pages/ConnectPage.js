@@ -4,7 +4,7 @@ import buttonStyles from '../components/Button';
 import { ref, onValue } from "firebase/database";
 import database from '../config/FirebaseDB';
 import { useRoute } from "@react-navigation/native"
-
+import styles from './styles';
 
 const ConnectPage = ({ navigation }) => {
 
@@ -25,35 +25,34 @@ const ConnectPage = ({ navigation }) => {
   };
 
   return (
-    <View style={connectStyles.container}>
-
-      <Text style={connectStyles.text}>some text here</Text>
-      
-      <TouchableOpacity
-        style={buttonStyles.button}
-        onPress={connect}
-      >
-        <Text style={buttonStyles.buttonText}>View Results</Text>
-      </TouchableOpacity>
-
-
+    <View style={styles.container}>
+      <View style={styles.inner}>
+        <Text style={styles.text}>some text here</Text>
+        
+        <TouchableOpacity
+          style={styles.button}
+          onPress={connect}
+        >
+          <Text style={styles.buttonText}>View Results</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
 
-const connectStyles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FFC0CB',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    padding: 20,
-    fontSize: 24,
-    color: 'gray',
-    textAlign: 'center',
-  },
-});
+// const connectStyles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#FFC0CB',
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//   },
+//   text: {
+//     padding: 20,
+//     fontSize: 24,
+//     color: 'gray',
+//     textAlign: 'center',
+//   },
+// });
 
 export default ConnectPage;

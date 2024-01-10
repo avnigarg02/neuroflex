@@ -4,6 +4,7 @@ import buttonStyles from '../components/Button';
 import { ref, onValue } from "firebase/database";
 import database from '../config/FirebaseDB';
 import { useRoute } from "@react-navigation/native"
+import styles from "./styles";
 
 // import {BleManager} from 'react-native-ble-plx'
 // const _BleManager = new BleManager();
@@ -23,35 +24,19 @@ const HomePage = ({ navigation }) => {
   }, [name]);
 
   return (
-    <View style={homeStyles.container}>
-
-      <Text style={homeStyles.text}>Hello {name}!</Text>
-      
-      <TouchableOpacity
-        style={buttonStyles.button}
-        onPress={() => navigation.navigate('Connect', { username: username })}
-      >
-        <Text style={buttonStyles.buttonText}>Connect</Text>
-      </TouchableOpacity>
-
-
+    <View style={styles.container}>
+      <View style={styles.inner}>
+        <Text style={styles.text}>Hello {name}!</Text>
+        
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate('Connect', { username: username })}
+        >
+          <Text style={styles.buttonText}>Connect</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
-
-const homeStyles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FFC0CB',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    padding: 20,
-    fontSize: 24,
-    color: 'gray',
-    textAlign: 'center',
-  },
-});
 
 export default HomePage;
