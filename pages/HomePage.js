@@ -5,8 +5,10 @@ import { ref, onValue } from "firebase/database";
 import database from '../config/FirebaseDB';
 import { useRoute } from "@react-navigation/native"
 
+// import {BleManager} from 'react-native-ble-plx'
+// const _BleManager = new BleManager();
 
-const ConnectPage = ({ navigation }) => {
+const HomePage = ({ navigation }) => {
 
   const route = useRoute()
   const username = route.params?.username
@@ -20,20 +22,16 @@ const ConnectPage = ({ navigation }) => {
     });
   }, [name]);
 
-  const connect = () => {
-    navigation.navigate('Results', { username: username })
-  };
-
   return (
-    <View style={connectStyles.container}>
+    <View style={homeStyles.container}>
 
-      <Text style={connectStyles.text}>some text here</Text>
+      <Text style={homeStyles.text}>Hello {name}!</Text>
       
       <TouchableOpacity
         style={buttonStyles.button}
-        onPress={connect}
+        onPress={() => navigation.navigate('Connect', { username: username })}
       >
-        <Text style={buttonStyles.buttonText}>View Results</Text>
+        <Text style={buttonStyles.buttonText}>Connect</Text>
       </TouchableOpacity>
 
 
@@ -41,7 +39,7 @@ const ConnectPage = ({ navigation }) => {
   );
 }
 
-const connectStyles = StyleSheet.create({
+const homeStyles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FFC0CB',
@@ -56,4 +54,4 @@ const connectStyles = StyleSheet.create({
   },
 });
 
-export default ConnectPage;
+export default HomePage;

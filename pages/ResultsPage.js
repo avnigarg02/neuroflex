@@ -6,7 +6,7 @@ import database from '../config/FirebaseDB';
 import { useRoute } from "@react-navigation/native"
 
 
-const ConnectPage = ({ navigation }) => {
+const ResultsPage = ({ navigation }) => {
 
   const route = useRoute()
   const username = route.params?.username
@@ -20,28 +20,20 @@ const ConnectPage = ({ navigation }) => {
     });
   }, [name]);
 
-  const connect = () => {
-    navigation.navigate('Results', { username: username })
-  };
 
   return (
-    <View style={connectStyles.container}>
+    <View style={resultStyles.container}>
 
-      <Text style={connectStyles.text}>some text here</Text>
+      <Text style={resultStyles.text}>{name}'s results:</Text>
       
-      <TouchableOpacity
-        style={buttonStyles.button}
-        onPress={connect}
-      >
-        <Text style={buttonStyles.buttonText}>View Results</Text>
-      </TouchableOpacity>
+      <Text style={resultStyles.text}>maybe add a picture here or something to show results</Text>
 
 
     </View>
   );
 }
 
-const connectStyles = StyleSheet.create({
+const resultStyles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FFC0CB',
@@ -56,4 +48,4 @@ const connectStyles = StyleSheet.create({
   },
 });
 
-export default ConnectPage;
+export default ResultsPage;
