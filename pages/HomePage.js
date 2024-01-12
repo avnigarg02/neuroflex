@@ -30,9 +30,9 @@ const HomePage = ({ navigation }) => {
         
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate('Connect', { username: username })}
+          onPress={() => navigation.navigate('Recording Data', { username: username })}
         >
-          <Text style={styles.buttonText}>Connect</Text>
+          <Text style={styles.buttonText}>Start Recording</Text>
         </TouchableOpacity>
       </View>
     </View>

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity , Image } from 'react-native';
 import buttonStyles from '../components/Button';
 import { ref, onValue } from "firebase/database";
 import database from '../config/FirebaseDB';
 import { useRoute } from "@react-navigation/native"
 import styles from './styles';
-
+import myImage from '../assets/em.png';
 const ConnectPage = ({ navigation }) => {
 
   const route = useRoute()
@@ -24,11 +24,14 @@ const ConnectPage = ({ navigation }) => {
     navigation.navigate('Results', { username: username })
   };
 
+
+
   return (
     <View style={styles.container}>
       <View style={styles.inner}>
-        <Text style={styles.text}>some text here</Text>
-        
+        <Text style={styles.text}>Currently Recording EMG Data</Text>
+
+        <Image source={myImage} style={styles.image}></Image>
         <TouchableOpacity
           style={styles.button}
           onPress={connect}

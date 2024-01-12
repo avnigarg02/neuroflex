@@ -18,7 +18,7 @@ export default function App() {
           <Stack.Screen name="Login" component={LoginPage}  /> 
           <Stack.Screen name="Home" component={HomePage} options={{title:"Home"}} />
           <Stack.Screen name="Signup" component={SignupPage} options={{title:"Signup"}} />
-          <Stack.Screen name="Connect" component={ConnectPage} options={{title:"Connect"}} />
+          <Stack.Screen name="Recording Data" component={ConnectPage} options={{title:"Recording Data"}} />
           <Stack.Screen name="Results" component={ResultsPage} options={{title:"Results"}} />
         </Stack.Navigator>
       </NavigationContainer>

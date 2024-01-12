@@ -24,6 +24,15 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     paddingBottom: 10,
   },
+  resultText: {
+    fontSize: 17,
+    color: red,
+    textAlign: 'center',
+    paddingBottom: 10,
+  },
+  image: {
+    marginBottom: 20,
+  },
   button: {
     backgroundColor: red,
     borderRadius: 5,

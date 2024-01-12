@@ -22,7 +22,14 @@ const ResultsPage = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.inner}>
         <Text style={styles.text}>{name}'s results:</Text>
-        <Text style={styles.smallText}>maybe add a picture here or something to show results</Text>
+        <Text style={styles.smallText}>Mean Amplitude: </Text>
+        <Text style={styles.resultText}>0.662</Text>
+        <Text style={styles.smallText}>Standard Deviation: </Text>
+        <Text style={styles.resultText}>0.073</Text>
+        <Text style={styles.smallText}>Likelihood of ALS</Text>
+        <Text style={styles.resultText}>13%</Text>
+        <Text style={styles.smallText}>Please note that this not a guarentee or diagnosis of ALS. Check with a medical professional if your likelihood is high.</Text>
+
       </View>
     </View>
   );
